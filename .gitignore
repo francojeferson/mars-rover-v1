@@ -1,0 +1,5 @@
+# Memory Bank (AI context, regenerable)
+.memory-bank/
+
+# AI behavioral rules (local developer setup)
+.clinerules/
