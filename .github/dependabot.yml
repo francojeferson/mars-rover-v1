@@ -1,38 +1,26 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/backend"
+    directories:
+      - "/backend"
+      - "/frontend"
     schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 5
+      interval: "quarterly"
+    open-pull-requests-limit: 3
     groups:
-      npm-backend:
+      npm:
         patterns: ["*"]
         update-types: ["minor", "patch"]
-  - package-ecosystem: "npm"
-    directory: "/frontend"
-    schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 5
-    groups:
-      npm-frontend:
+      npm-major:
         patterns: ["*"]
-        update-types: ["minor", "patch"]
+        update-types: ["major"]
   - package-ecosystem: "docker"
-    directory: "/backend"
+    directories:
+      - "/backend"
+      - "/frontend"
     schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 5
+      interval: "quarterly"
+    open-pull-requests-limit: 2
     groups:
-      docker-backend:
+      docker:
         patterns: ["*"]
-        update-types: ["minor", "patch"]
-  - package-ecosystem: "docker"
-    directory: "/frontend"
-    schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 5
-    groups:
-      docker-frontend:
-        patterns: ["*"]
-        update-types: ["minor", "patch"]
